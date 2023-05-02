@@ -79,7 +79,10 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "scripts": []
+            "scripts": [],
+            "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css"
+            ]
           }
         }
       }

@@ -1,0 +1,29 @@
+<nav class="sidenav-links">
+    <a routerLink="/home" routerLinkActive="router-link-active">
+        <div></div>
+        <div class="icon-container">
+            <div></div>
+            <mat-icon>home</mat-icon>
+        </div>
+        <span>Home</span>
+    </a>
+    <a routerLink="/cards" routerLinkActive="router-link-active">
+        <div></div>
+        <div class="icon-container">
+            <div></div>
+            <mat-icon>view_carousel</mat-icon>
+        </div>
+        <span>Cards</span>
+    </a>
+    <a routerLink="/decks" routerLinkActive="router-link-active">
+        <div></div>
+        <div class="icon-container">
+            <div></div>
+            <mat-icon>star</mat-icon>
+        </div>
+        <span>Favorites</span>
+    </a>
+</nav>
+<div class="sidenav-content">
+    <router-outlet></router-outlet>
+</div>
