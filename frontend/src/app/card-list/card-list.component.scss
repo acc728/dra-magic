@@ -28,8 +28,25 @@
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    width: 25%;
+    width: 24%;
     height: 100%;
     gap: 20px;
   }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3%;
+}
+
+//   #rndBut {
+//     width: 300px;
+//     margin: auto;
+//   }
+
+//   #favBut {
+//     width: 200px;
+//     margin: auto;
+//   }
 

@@ -1,8 +1,13 @@
 <mat-toolbar class="header">
-    <a routerLink="/" class="logo">
-        <span>Magic: The Gathering </span>
-        <span>Cards Library</span>
-    </a>
+    <div style="display:flex; flex-direction: row;">
+        <img class="magic-logo" src= "/assets/logo-magic.png">
+        <a routerLink="/" class="logo">
+            <span>Magic: The Gathering </span>
+            <span>Card Generator</span>
+        </a>
+    </div>
+
+
     <div *ngIf="!register; else noRegister" class="user">
         <span>USERNAME</span>
         <div class="user-img">

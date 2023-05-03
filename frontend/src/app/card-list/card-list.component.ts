@@ -31,4 +31,8 @@ export class CardListComponent {
           console.log(response);
         });
   }
+
+  addFavorites() : void {
+    
+  }
 }
