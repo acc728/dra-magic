@@ -4,11 +4,11 @@ import { CardApiService } from '../services/card-api.service';
 import { Card } from '../models/Card';
 
 @Component({
-  selector: 'app-card-list',
-  templateUrl: './card-list.component.html',
-  styleUrls: ['./card-list.component.scss'],
+  selector: 'app-card-generator',
+  templateUrl: './card-generator.component.html',
+  styleUrls: ['./card-generator.component.scss'],
 })
-export class CardListComponent {
+export class CardGeneratorComponent {
   autocompleteControl = new FormControl('');
 //   cards!: Card[];
   randomCard!: Card;
@@ -33,6 +33,6 @@ export class CardListComponent {
   }
 
   addFavorites() : void {
-    
+
   }
 }

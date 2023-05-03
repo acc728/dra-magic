@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CardListComponent } from './card-list/card-list.component';
+import { CardGeneratorComponent } from './card-generator/card-generator.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/cards', pathMatch: 'full' },
-    { path: 'cards', component: CardListComponent },
+    { path: 'cards', component: CardGeneratorComponent },
+    { path: 'home', component: HomeComponent },
   ];
 
 @NgModule({

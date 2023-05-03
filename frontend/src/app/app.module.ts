@@ -24,10 +24,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CardComponent } from './card/card.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
-import { CardListComponent } from './card-list/card-list.component';
+import { CardGeneratorComponent } from './card-generator/card-generator.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RemoteCardApiService } from './services/remote-card-api.service';
 import { CardApiService } from './services/card-api.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -37,8 +38,9 @@ import { CardApiService } from './services/card-api.service';
     MenuComponent,
     CardComponent,
     AutocompleteComponent,
-    CardListComponent,
-    LoaderComponent
+    CardGeneratorComponent,
+    LoaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
