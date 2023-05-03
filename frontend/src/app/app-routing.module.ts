@@ -4,7 +4,7 @@ import { CardGeneratorComponent } from './card-generator/card-generator.componen
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: '/cards', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'cards', component: CardGeneratorComponent },
     { path: 'home', component: HomeComponent },
   ];
