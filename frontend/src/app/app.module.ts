@@ -22,13 +22,23 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CardComponent } from './card/card.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { LoaderComponent } from './loader/loader.component';
+import { RemoteCardApiService } from './services/remote-card-api.service';
+import { CardApiService } from './services/card-api.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    CardComponent,
+    AutocompleteComponent,
+    CardListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatProgressSpinnerModule,
     DragDropModule,
   ],
-  providers: [],
+  providers: [
+    { provide: CardApiService, useClass: RemoteCardApiService },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

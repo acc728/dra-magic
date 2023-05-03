@@ -1,0 +1,13 @@
+<mat-toolbar class="section-header">
+    <h2>Random Card</h2>
+  </mat-toolbar>
+
+<div class="card-container">
+    <button mat-raised-button=""
+      class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base"
+      (click)="generateRandomCard()">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="loop"></mat-icon>
+      <span class="mdc-buttonlabel">Generate Random Card</span>
+    </button>
+    <app-card [card]="randomCard"></app-card>
+</div>
