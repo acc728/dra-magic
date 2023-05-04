@@ -29,6 +29,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { RemoteCardApiService } from './services/remote-card-api.service';
 import { CardApiService } from './services/card-api.service';
 import { HomeComponent } from './home/home.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HomeComponent } from './home/home.component';
     AutocompleteComponent,
     CardGeneratorComponent,
     LoaderComponent,
-    HomeComponent
+    HomeComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

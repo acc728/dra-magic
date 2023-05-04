@@ -12,15 +12,6 @@ export class RemoteCardApiService implements CardApiService {
 
   constructor(private remoteApi: RemoteApiService) {}
 
-//   getCards(): Observable<Card[]> {
-//     return this.remoteApi.get<any>(`${this.rps101Url}/cards`).pipe(
-//         map((response) => {
-//           return response.cards as Card[];
-//         }
-//     ));
-//   }
-
-
   getCards(): Observable<Card[]> {
     return this.remoteApi.get<any>(`${this.magicApiUrl}/cards`).pipe(
         map((response) => {
@@ -61,7 +52,4 @@ export class RemoteCardApiService implements CardApiService {
         })
       );
   }
-
-
-
 }

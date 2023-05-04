@@ -1,0 +1,23 @@
+<mat-toolbar class="section-header">
+    <h2>Favorites Cards</h2>
+    <app-autocomplete (filteredOutput)="getFiltered($event)" [array]="cards"
+      [control]="autocompleteControl"></app-autocomplete>
+  </mat-toolbar>
+  <div class="grid-list" *ngIf="filteredCards?.length != 0; else notFound">
+    <div class="card-container" *ngFor="let card of filteredCards; let i=index">
+        <img class="delete-card clickable" (click)="onDelete(filteredCards[i])" src="assets/delete_button_template.svg"
+        alt="Delete button" />
+        <app-card [card]="filteredCards[i]"></app-card>
+    </div>
+
+  </div>
+  <ng-template #notFound>
+    <div class="card-not-found">
+      <p>
+        No card with name "{{ cutString(autocompleteControl.value!) }}" has been found
+      </p>
+      <div>
+        <img class="card-img-not-found" src="assets/magic-card-back.jpg" alt="Not Found">
+      </div>
+    </div>
+  </ng-template>

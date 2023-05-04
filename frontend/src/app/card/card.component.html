@@ -1,8 +1,4 @@
 <div class="svg-card">
-    <img class="template-card" src="{{this.card.imageUrl}}" alt="card">
-
-    <!-- <img *ngIf="!flipCard" class="object-icon" src="assets/object-images/{{name}}.svg" alt="{{name}}">
-    <div *ngIf="!flipCard" class="card-name">
-        <span>{{name}}</span>
-    </div> -->
+    <img *ngIf="this.card" class="template-card" src="{{this.card.imageUrl}}" alt="card">
+    <img *ngIf="!this.card" class="template-card" src="assets/magic-card-back.jpg" alt="card">
 </div>
