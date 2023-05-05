@@ -10,23 +10,23 @@ import { EventEmitter } from '@angular/core';
   templateUrl: './autocomplete.component.html',
   styleUrls: ['./autocomplete.component.scss'],
 })
-export class AutocompleteComponent<T> {
+export class AutocompleteComponent<Card> {
   @ViewChild('autocomplete', { static: false })
   automcompleteElement: ElementRef = new ElementRef(null);
 
   @Input() placeholder: string = 'Search...';
-  @Input() array!: T[];
+  @Input() array!: Card[];
   @Input() control = new FormControl('');
   @Input() filterProperty: string = '';
 
-  @Output() filteredOutput = new EventEmitter<T[]>();
+  @Output() filteredOutput = new EventEmitter<Card[]>();
 
-  filteredArray!: Observable<T[]>;
-  filterPropertyKey!: keyof T;
+  filteredArray!: Observable<Card[]>;
+  filterPropertyKey!: keyof Card;
   type!: string;
 
   ngOnChanges(): void {
-    this.filterPropertyKey = this.filterProperty as keyof T;
+    this.filterPropertyKey = this.filterProperty as keyof Card;
     this.filteredArray = this.control.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))
@@ -34,9 +34,9 @@ export class AutocompleteComponent<T> {
     this.filteredOutput.emit(this.array);
   }
 
-  private _filter(value: string): T[] {
+  private _filter(value: string): Card[] {
     const filterValue = value.toLowerCase();
-    let filtered: T[] = [];
+    let filtered: Card[] = [];
 
     if (!value) {
       filtered = this.array;

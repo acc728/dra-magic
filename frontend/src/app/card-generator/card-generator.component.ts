@@ -10,9 +10,7 @@ import { Card } from '../models/Card';
 })
 export class CardGeneratorComponent {
   autocompleteControl = new FormControl('');
-//   cards!: Card[];
   randomCard!: Card;
-//   filteredCards!: Card[];
 
   constructor(private cardApi: CardApiService) {}
 
@@ -22,17 +20,23 @@ export class CardGeneratorComponent {
 
   generateRandomCard(): void{
     this.cardApi.getRandomCard().subscribe((response) => {
-        //   this.cards = response;
           this.randomCard = {
+            id: response.id,
             name: response.name,
             colors: response.colors,
-            imageUrl: response.imageUrl
+            imageUrl: response.imageUrl,
+            comments: response.comments
           }
           console.log(response);
         });
   }
 
   addFavorites() : void {
-
+    console.log("Carta a aniadir: " + this.randomCard.name + ", " + this.randomCard.imageUrl + ", " + this.randomCard)
+    // this.cardApi.addCard(this.randomCard).subscribe((response) => {
+    //     //TODO: Validar response
+    //     const addedDeck = response;
+    //     console.log("The added card is:" + addedDeck);
+    //   });
   }
 }

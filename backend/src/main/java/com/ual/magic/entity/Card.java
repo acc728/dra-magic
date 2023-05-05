@@ -23,6 +23,7 @@ public class Card {
     @Size(min=0, max=5, message = "Colors are mandatory (0-5 per card)")
     private String[] colors;
 
+    private String comments;
 
     public Card() {
     }
@@ -31,6 +32,7 @@ public class Card {
         this.name = name;
         this.imageUrl = imageUrl;
         this.colors = colors;
+        this.comments = "";
     }
 
     public long getId() {
@@ -64,4 +66,13 @@ public class Card {
     public void setColors(String[] colors) {
         this.colors = colors;
     }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
 }
