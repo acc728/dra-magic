@@ -5,10 +5,10 @@
   </mat-toolbar>
   <div cdkDropList cdkDropListOrientation="horizontal" class="grid-list" *ngIf="filteredCards?.length != 0; else notFound" [cdkDropListData]="cards"
   (cdkDropListDropped)="drop($event)">
-    <div cdkDrag class="card-container" *ngFor="let card of filteredCards; let i=index">
+    <div cdkDrag class="card-container clickable draggable" *ngFor="let card of filteredCards; let i=index">
         <img class="delete-card clickable" (click)="onDelete(filteredCards[i])" src="assets/delete_button_template.svg"
         alt="Delete button" />
-        <app-card cdkDragHandle [card]="filteredCards[i]"></app-card>
+        <app-card cdkDragHandle routerLink="/favorites/{{card.id}}/details" [card]="filteredCards[i]"></app-card>
     </div>
 
   </div>

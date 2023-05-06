@@ -115,9 +115,16 @@ app-root {
     }
 }
 
-
 .clickable {
     cursor: pointer;
+}
+
+.draggable {
+    cursor: pointer;
+}
+
+.draggable:active {
+    cursor: grabbing;
 }
 
 .forbidden {

@@ -1,0 +1,29 @@
+<div>
+    <mat-toolbar class="section-header">
+        <h2>Card Details</h2>
+        <div class="buttons">
+            <button mat-raised-button=""
+                class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base"
+                (click)="onSave()">
+                <mat-icon aria-hidden="false" fontIcon="check"></mat-icon>
+                <span class="mdc-buttonlabel">Save</span>
+            </button>
+            <button mat-raised-button=""
+                class="mdc-button mdc-button--raised mat-mdc-raised-button mat-primary mat-mdc-button-base"
+                (click)="onCancel()">
+                <mat-icon aria-hidden="false" fontIcon="close"></mat-icon>
+                <span class="mdc-buttonlabel">Cancel</span>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <div class="deck-contents-container">
+        <app-card class="card" [card]="card"></app-card>
+        <mat-form-field id="cardComments" appearance="fill">
+            <input matInput [(ngModel)]="cardComments" placeholder="Card Comments" maxlength="120" />
+            <div [hidden]="!requestFailed ">
+                <small>{{ error }}</small>
+            </div>
+        </mat-form-field>
+    </div>
+</div>

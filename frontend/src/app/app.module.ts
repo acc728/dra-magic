@@ -30,6 +30,7 @@ import { RemoteCardApiService } from './services/remote-card-api.service';
 import { CardApiService } from './services/card-api.service';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     CardGeneratorComponent,
     LoaderComponent,
     HomeComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,

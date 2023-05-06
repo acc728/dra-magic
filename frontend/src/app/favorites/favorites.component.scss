@@ -4,26 +4,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .card-not-found {
+.card-not-found {
     height: 70vh;
     padding-top: 12vh;
     text-align: center;
     font-style: italic;
-  }
+}
 
-  .card-not-found p {
+.card-not-found p {
     color: white;
     font-size: 1.8vh;
-  }
+}
 
-  .card-not-found div {
+.card-not-found div {
     display: inline-block;
     width: 11%;
-  }
+}
 
-  .delete-card {
+.delete-card {
     position: absolute;
     z-index: 50;
     width: 25px;
@@ -42,22 +42,26 @@
     padding-top: 12vh;
     text-align: center;
     font-style: italic;
-  }
+}
 
-  .card-not-found p {
+.card-not-found p {
     color: white;
     font-size: 1.8vh;
-  }
+}
 
-  .card-not-found div {
+.card-not-found div {
     display: flex;
     margin: auto;
     justify-content: center;
     width: 11%;
-  }
+}
 
-  .card-img-not-found {
+.card-img-not-found {
     display: flex;
     justify-content: center;
     border-radius: 15px;
-  }
+}
+
+.cdk-drop-list-dragging {
+    cursor: grab;
+}

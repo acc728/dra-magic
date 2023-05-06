@@ -25,7 +25,7 @@ export class FavoritesComponent {
             {
                 id: 1,
                 name: 'Faerie Artisans',
-                colors: Array(1),
+                colors: ['U'],
                 imageUrl:
                     'https://cards.scryfall.io/normal/front/f/f/ff05c503-2536-48f5-a639-480614a2e5f8.jpg?1562427705',
                 comments: ""
@@ -50,7 +50,7 @@ export class FavoritesComponent {
             }, {
                 id: 4,
                 name: 'Faerie Artisans',
-                colors: Array(1),
+                colors: ['U'],
                 imageUrl:
                     'https://cards.scryfall.io/normal/front/f/f/ff05c503-2536-48f5-a639-480614a2e5f8.jpg?1562427705',
                 comments: ""
@@ -95,7 +95,7 @@ export class FavoritesComponent {
     }
 
     onDelete(card: Card){
-        console.log(card.name)
+        console.log(card)
     }
 
     drop($event: CdkDragDrop<Card[]>) {
