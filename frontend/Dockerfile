@@ -11,5 +11,5 @@ RUN npm run build --prod
 
 # Stage 2 - Run
 FROM nginx:alpine AS run
-COPY --from=build /usr/app/dist/magic/ /usr/share/nginx/html
+COPY --from=build /usr/app/dist/frontend/ /usr/share/nginx/html
 EXPOSE 80

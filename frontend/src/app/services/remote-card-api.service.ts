@@ -27,6 +27,14 @@ export class RemoteCardApiService implements CardApiService {
       );
   }
 
+  getCards(): Observable<Card[]> {
+    return this.remoteApi.get<any>(`${this.cardsUrl}`).pipe(
+      map((response) => {
+        return response._embedded.cards;
+      })
+    );
+  }
+
   getCard(id: number): Observable<Card> {
     return this.remoteApi.get<any>(`${this.cardsUrl}/${id}`);
   }

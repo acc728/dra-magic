@@ -4,6 +4,8 @@ import { Card } from '../models/Card';
 export abstract class CardApiService {
   public abstract getRandomCard(): Observable<Card>;
 
+  public abstract getCards(): Observable<Card[]>;
+
   public abstract getCard(id: number): Observable<Card>;
 
   public abstract updateCard(id: number, card: Card): Observable<any>;

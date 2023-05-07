@@ -21,7 +21,7 @@ export class CardGeneratorComponent {
   generateRandomCard(): void{
     this.cardApi.getRandomCard().subscribe((response) => {
           this.randomCard = {
-            id: response.id,
+            id: -1,
             name: response.name,
             colors: response.colors,
             imageUrl: response.imageUrl,
@@ -33,10 +33,10 @@ export class CardGeneratorComponent {
 
   addFavorites() : void {
     console.log("Carta a aniadir: " + this.randomCard.name + ", " + this.randomCard.imageUrl + ", " + this.randomCard)
-    // this.cardApi.addCard(this.randomCard).subscribe((response) => {
-    //     //TODO: Validar response
-    //     const addedDeck = response;
-    //     console.log("The added card is:" + addedDeck);
-    //   });
+    this.cardApi.addCard(this.randomCard).subscribe((response) => {
+        //TODO: Validar response
+        const addedDeck = response;
+        console.log("The added card is:" + addedDeck);
+      });
   }
 }
