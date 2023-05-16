@@ -28,9 +28,12 @@ export class CardDetailComponent {
         if (this.cardId) {
           this.cardApi.getCard(this.cardId).subscribe((result) => {
             this.card = result;
+            console.log(this.card);
+            this.cardComments = result.comments;
+            console.log(this.cardComments);
           });
         }
-      }
+    }
 
       onSave() {
         this.unsavedChanges = false;
