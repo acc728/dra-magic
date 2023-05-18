@@ -28,21 +28,33 @@ export class CardGeneratorComponent {
             imageUrl: response.imageUrl,
             comments: response.comments
           }
-          console.log(response);
         });
   }
 
   addFavorites() : void {
-    console.log("Carta a aniadir: " + this.randomCard.name + ", " + this.randomCard.imageUrl + ", " + this.randomCard)
-    this.cardApi.addCard(this.randomCard).subscribe((response) => {
-        //TODO: Validar response
-        const addedDeck = response;
-        console.log("The added card is:" + addedDeck);
-        this.snackBar.open("Card added succesfully to favorites!", '', {
-            duration: 3000,
-            verticalPosition: 'top',
-            horizontalPosition: 'center'
+    this.cardApi.getCards().subscribe((response) => {
+        const found = response.find((card) => {
+            return card.name == this.randomCard.name;
         });
-      });
+
+        if(found){
+            console.log(response.indexOf(this.randomCard))
+            this.snackBar.open("Card is already added to favorites!", '', {
+                duration: 3000,
+                verticalPosition: 'top',
+                horizontalPosition: 'center'
+            });
+        }else{
+            console.log(response.indexOf(this.randomCard))
+            this.cardApi.addCard(this.randomCard).subscribe((response2) => {
+                const addedCard = response2;
+                this.snackBar.open("Card succesfully added to favorites!", '', {
+                    duration: 3000,
+                    verticalPosition: 'top',
+                    horizontalPosition: 'center'
+                });
+              });
+        }
+    });
   }
 }

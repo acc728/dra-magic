@@ -2,7 +2,26 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 :root {
-    --blue: #1a1f40;
+    --dark: #27292b;
+    --dark-90: #2E2C2C;
+    --dark-80: #474747;
+    --dark-70: #858585;
+    --dark-60: #b3b3b3;
+    --white: #ffffff;
+    --gray: #9092a4;
+    --orange-gradient: linear-gradient(180deg, #fa3200, #fa7800);
+    // --orange-gradient: linear-gradient(180deg, #fbd03b, #fa7800);
+    --green-gradient: linear-gradient(90deg, #b3ffab, #12fff7);
+    --pink-gradient: linear-gradient(90deg, #fa669c, #e13387);
+    --purple-gradient: linear-gradient(90deg, #8257fc, #6736f1);
+    --background-opacity: #2c2c30ed;
+    --card-opacity: #4a4c559b;
+    --titillium: "Titillium Web", Arial, Helvetica, sans-serif;
+    --krub: Krub, Arial, Helvetica, sans-serif;
+
+    /* Estilo antiguo
+    --blue: #272323;
+    --save1: #1a1f40;
     --blue-90: #21264a;
     --blue-80: #282e54;
     --blue-70: #5f6892;
@@ -17,6 +36,7 @@
     --card-opacity: #282e549b;
     --titillium: "Titillium Web", Arial, Helvetica, sans-serif;
     --krub: Krub, Arial, Helvetica, sans-serif;
+}*/
 }
 
 html,
@@ -38,7 +58,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--blue);
+  background: var(--dark);
   font-family: "Titillium Web", Arial, Helvetica, sans-serif;
   display: flex;
   gap: 50px;
@@ -75,7 +95,7 @@ h4 {
 
 mat-toolbar.section-header {
     justify-content: space-between;
-    background: var(--blue);
+    background: var(--dark);
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
@@ -144,7 +164,7 @@ app-root {
   height: calc(100vh - 80px);
   position: fixed;
   bottom: 0;
-  background-color: var(--blue);
+  background-color: var(--dark);
   padding: 40px;
   padding-top: 20px;
   z-index: 1000;
@@ -156,12 +176,12 @@ app-root {
 
 *::-webkit-scrollbar-track {
     border-radius: 8px;
-    background-color: var(--blue-80);
+    background-color: var(--dark-80);
 }
 
 *::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: var(--blue-70);
+    background-color: var(--dark-70);
 }
 
 app-deck {
