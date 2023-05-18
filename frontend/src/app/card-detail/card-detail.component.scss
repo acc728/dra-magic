@@ -13,6 +13,18 @@
     gap: 30px;
 }
 
+.comments {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+#comment {
+    margin-top: 14px;
+}
+
 .cards-rows {
     display: flex;
     flex-direction: column;

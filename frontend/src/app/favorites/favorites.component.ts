@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { CardApiService } from '../services/card-api.service';
 import { Card } from '../models/Card';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-favorites',
@@ -15,7 +16,7 @@ export class FavoritesComponent {
     filteredCards!: Card[];
     filterProperty: string = "name";
 
-    constructor(private cardApi: CardApiService) {}
+    constructor(private cardApi: CardApiService, private snackBar: MatSnackBar) {}
 
     ngOnInit() {
           this.cardApi.getCards().subscribe((response) => {
@@ -38,6 +39,11 @@ export class FavoritesComponent {
         this.cards.splice(this.cards.indexOf(card),1)
         this.cardApi.deleteCard(card.id).subscribe((response) => {
             //TODO: Validar response
+        });
+        this.snackBar.open("Card deleted succesfully!", '', {
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center'
         });
     }
 

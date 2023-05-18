@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { CardApiService } from '../services/card-api.service';
 import { Card } from '../models/Card';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-card-generator',
@@ -12,7 +13,7 @@ export class CardGeneratorComponent {
   autocompleteControl = new FormControl('');
   randomCard!: Card;
 
-  constructor(private cardApi: CardApiService) {}
+  constructor(private cardApi: CardApiService, private snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.generateRandomCard();
@@ -37,6 +38,11 @@ export class CardGeneratorComponent {
         //TODO: Validar response
         const addedDeck = response;
         console.log("The added card is:" + addedDeck);
+        this.snackBar.open("Card added succesfully to favorites!", '', {
+            duration: 3000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center'
+        });
       });
   }
 }

@@ -98,3 +98,8 @@ span.mdc-list-item__primary-text {
     color: #8690BF50 !important;
     background-color: #282E5450 !important;
 }
+
+.mdc-text-field--filled.mdc-text-field--no-label .mdc-text-field__input
+{
+    margin-top: 3px;
+}

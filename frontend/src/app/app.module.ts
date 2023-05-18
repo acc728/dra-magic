@@ -31,6 +31,7 @@ import { CardApiService } from './services/card-api.service';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { CardDetailComponent } from './card-detail/card-detail.component';
     MatSliderModule,
     MatProgressSpinnerModule,
     DragDropModule,
+    MatSnackBarModule,
   ],
   providers: [
     { provide: CardApiService, useClass: RemoteCardApiService },

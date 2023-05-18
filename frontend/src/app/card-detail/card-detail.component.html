@@ -19,11 +19,15 @@
 
     <div class="deck-contents-container">
         <app-card class="card" [card]="card"></app-card>
-        <mat-form-field id="cardComments" appearance="fill">
-            <input matInput [(ngModel)]="cardComments" value="this.card.comments" placeholder="Card Comments" maxlength="120" />
-            <div [hidden]="!requestFailed ">
-                <small>{{ error }}</small>
-            </div>
-        </mat-form-field>
+        <div class="comments">
+            <h4 id="comment">Comments: </h4>
+            <mat-form-field id="cardComments" appearance="fill">
+                <input matInput [(ngModel)]="cardComments" value="this.card.comments" placeholder="Card Comments" maxlength="120" />
+                <div [hidden]="!requestFailed ">
+                    <small>{{ error }}</small>
+                </div>
+            </mat-form-field>
+        </div>
+
     </div>
 </div>
