@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-style: bold;
+    margin: auto;
+    justify-content: start;
+    color: orange;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 80%;
+    margin: auto;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 20px;
+}
+
+.card-image {
+    width: 316px;
+    height: 470px;
+    border-radius: 20px;
+}

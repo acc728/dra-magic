@@ -1,0 +1,15 @@
+<mat-toolbar class="section-header">
+    <h2>Hot Buy List</h2>
+</mat-toolbar>
+
+<img class="info" src="/assets/hot_buys.png" alt="">
+
+<div class="container-info">
+    <h4>Hot card list:</h4>
+    <div class="cards-container">
+        <div *ngFor="let card of hotCards; let i=index">
+            <img *ngIf="hotCards[0].length==0;" class="card-image" src="assets/magic-card-back.jpg">
+            <img *ngIf="hotCards[0].length!=0;" class="card-image" [src]="hotCards[i]">
+        </div>
+    </div>
+</div>

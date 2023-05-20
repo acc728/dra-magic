@@ -4,6 +4,7 @@ import { CardGeneratorComponent } from './card-generator/card-generator.componen
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
+import { HotCardsComponent } from './hot-cards/hot-cards.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'favorites', component: FavoritesComponent },
     { path: 'favorites/:cardId/details', component: CardDetailComponent },
+    { path: 'hot-buys', component: HotCardsComponent },
   ];
 
 @NgModule({

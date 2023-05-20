@@ -35,6 +35,14 @@ export class RemoteCardApiService implements CardApiService {
     );
   }
 
+  getCardImageByName(cardName : String) : Observable<String> {
+    return this.remoteApi.get<any>(`${this.scryfallApi}/cards/named?fuzzy=${cardName}`).pipe(
+        map((response) => {
+          return response.image_uris.normal != undefined ? response.image_uris.normal : "/assets/magic-card-back.jpg";
+        })
+      );
+  }
+
   getCard(id: number): Observable<Card> {
     return this.remoteApi.get<any>(`${this.cardsUrl}/${id}`);
   }

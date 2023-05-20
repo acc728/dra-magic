@@ -31,7 +31,10 @@ import { CardApiService } from './services/card-api.service';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CardDetailComponent } from './card-detail/card-detail.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HotCardsComponent } from './hot-cards/hot-cards.component';
+import { RemoteScrapperService } from './services/remote-scrapper.service';
+import { ScrapperService } from './services/scrapper.service';
 
 
 @NgModule({
@@ -45,7 +48,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
     LoaderComponent,
     HomeComponent,
     FavoritesComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    HotCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
   ],
   providers: [
     { provide: CardApiService, useClass: RemoteCardApiService },
+    { provide: ScrapperService, useClass: RemoteScrapperService },
 ],
   bootstrap: [AppComponent]
 })

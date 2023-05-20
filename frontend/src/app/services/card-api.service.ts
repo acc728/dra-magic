@@ -13,4 +13,6 @@ export abstract class CardApiService {
   public abstract addCard(card: Card): Observable<Card>;
 
   public abstract deleteCard(id: number): Observable<Card>;
+
+  public abstract getCardImageByName(cardName : String) : Observable<String>;
 }
