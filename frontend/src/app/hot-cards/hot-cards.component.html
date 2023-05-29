@@ -8,8 +8,8 @@
     <h4>Hot card list:</h4>
     <div class="cards-container">
         <div *ngFor="let card of hotCards; let i=index">
-            <img *ngIf="hotCards[0].length==0;" class="card-image" src="assets/magic-card-back.jpg">
-            <img *ngIf="hotCards[0].length!=0;" class="card-image" [src]="hotCards[i]">
+            <img *ngIf="hotCards[i].length==0;" class="card-image" src="assets/magic-card-back.jpg">
+            <img *ngIf="hotCards[i].length!=0;" class="card-image" [src]="hotCards[i]">
         </div>
     </div>
 </div>
