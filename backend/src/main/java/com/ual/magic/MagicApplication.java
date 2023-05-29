@@ -9,8 +9,17 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+/**
+ * The MagicApplication class is the entry point for the application.
+ */
 @SpringBootApplication
 public class MagicApplication {
+
+	/**
+     * Creates and configures a CorsFilter bean.
+     *
+     * @return A CorsFilter object with the specified CORS configuration.
+     */
 	@Bean
 	public CorsFilter corsFilter() {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -35,6 +44,11 @@ public class MagicApplication {
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
 
+	/**
+     * The main method that starts the application.
+     *
+     * @param args The command line arguments.
+     */
 	public static void main(String[] args) {
 		SpringApplication.run(MagicApplication.class, args);
 	}

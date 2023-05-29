@@ -10,21 +10,39 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Component;
 
+/**
+ * The TrendsDTOService class is responsible for retrieving trends data.
+ */
 @Component("trendsService")
 public class TrendsDTOService {
     private Playwright playwrightInstance;
 
+    /**
+     * Constructor for the TrendsDTOService class.
+     * Initializes the Playwright instance.
+     */
     public TrendsDTOService() {
         super();
         this.playwrightInstance = Playwright.create();
     }
 
+    /**
+     * Retrieves trends by retrieving the top cards.
+     * 
+     * @return A TrendsDTO object containing the top cards associated with the trends.
+     */
     public TrendsDTO retrieveTrends() {
         Browser browserInstance = this.playwrightInstance.chromium().launch();
         var topCards = retrieveTopCards(browserInstance);
         return new TrendsDTO(topCards);
     }
 
+    /**
+     * Retrieves the top cards by scraping the webpage.
+     * 
+     * @param browser The browser instance to use for scraping.
+     * @return An array of strings representing the top cards.
+     */
     private String[] retrieveTopCards(Browser browser) {
         Page page = browser.newPage();
         page.navigate("https://www.cardkingdom.com/");

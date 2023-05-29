@@ -10,12 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ual.magic.dto.TrendsDTO;
 import com.ual.magic.service.TrendsDTOService;
 
+/**
+ * The TrendsDTOController class handles the REST API endpoints for trends data.
+ */
 @RestController
 @RequestMapping("/trends")
 public class TrendsDTOController {
     @Autowired
     private TrendsDTOService trendsService;
 
+    /**
+     * Retrieves trends data.
+     * 
+     * @return A ResponseEntity containing the TrendsDTO object representing the trending magic cards data.
+     */
     @GetMapping("data")
     public ResponseEntity<TrendsDTO> getTrendsData() {
         return new ResponseEntity<TrendsDTO>(trendsService.retrieveTrends(),

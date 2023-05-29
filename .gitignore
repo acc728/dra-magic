@@ -2,3 +2,4 @@
 /data
 .vscode/
 backend/salt
+/node_modules
