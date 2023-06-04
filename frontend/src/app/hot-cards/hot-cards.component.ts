@@ -37,18 +37,30 @@ export class HotCardsComponent {
                     )
                     .subscribe((response) => {
                         this.hotCards[i] = response;
-                        if (this.hotCards[i].length == 0) {
-                            this.cardApiService
-                                .getCardImageByName(
-                                    this.scrapperArray[
-                                        this.scrapperArray.length - i
-                                    ]
-                                )
-                                .subscribe((response) => {
-                                    this.hotCards[i] = response;
-                                });
-                        }
+                        console.log(response)
                     });
+                    if(this.hotCards[i].length == 0) {
+                        this.cardApiService
+                            .getCardImageByName(
+                                this.scrapperArray[
+                                    this.scrapperArray.length - i
+                                ]
+                            )
+                            .subscribe((response) => {
+                                this.hotCards[i] = response;
+                            });
+                    }
+                    else if(this.hotCards[i].length == 0) {
+                        this.cardApiService
+                            .getCardImageByName(
+                                this.scrapperArray[
+                                    this.scrapperArray.length / 2 - i
+                                ]
+                            )
+                            .subscribe((response) => {
+                                this.hotCards[i] = response;
+                            });
+                    }
             }
         });
     }
